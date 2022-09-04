@@ -507,7 +507,7 @@ class UNet(DDPM):
 
         if sampler == "plms":
             print(f'Data shape for PLMS sampling is {shape}')
-            samples = self.plms_sampling(conditioning, batch_size, x_latent,
+            samples = self.plms_sampling(conditioning, 1, x_latent, # i only am gonna use bs=1 anyway, and i was getting an error about it not being defined
                                          callback=callback,
                                          img_callback=img_callback,
                                          quantize_denoised=quantize_x0,
